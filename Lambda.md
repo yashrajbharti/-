@@ -8,10 +8,10 @@ Java 8 is here, and, with it, come lambdas. Although long overdue, lambdas are a
 
 While lambdas are the most prominent addition to Java 8, there are many other new features, such as functional interfaces, virtual methods, class and method references, new time and date API, JavaScript support, and so on. In this post, I will focus mostly on lambdas and their associated features, as understanding this feature is a must for any Java programmer on-boarding to Java 8.
 
-:octocat:
+
 
 ## What are lambdas? :sparkles:
-
+:octocat:
 Lambdas are succinctly expressed single method classes that represent behaviour. They can either be assigned to a variable or passed around to other methods just like we pass data as arguments.
 
 You’d think we’d need a new function type to represent this sort of expression. Instead, Java designers cleverly used existing interfaces with one single abstract method as the lambda’s type.
@@ -42,8 +42,8 @@ Have a look at them once again until you familiarize yourself with the syntax. I
 
 You might wonder what the type is for these expressions. The type of any lambda is a functional interface, which we discuss below.
 
-## Lambda Syntax 
-:sparkles:
+## Lambda Syntax :sparkles:
+:octocat:
 There is a special syntax to create and represent a lambda expression. Just like a normal Java method, a lambda expression has input arguments, a body, and an optional return value. This is illustrated here below:
 
 > input arguments -> body
@@ -112,13 +112,13 @@ private void addStrings(String s1, String s2) {
 Before we move on, let’s take a moment to understand what is achieved here. The noticeable thing is that we are now treating the business logic as a function that can be tossed around for execution. We can define numerous variations of the business logic on the fly (kind of!) without having to create and instantiate classes as we used to do before.
 
 Now that we understand a bit about lambda expressions and their types, let’s run through a complete example using lambdas. We’ll also compare and contrast with the pre-Java 8 version to understand the differences.
-:octocat:
-## Lambda Example
 
+## Lambda Example :sparkles:
+:octocat:
 Our requirement is to create business logic for merging two trades issued by the same issuer. This example should solve the requirement by using both pre-Java 8 and Java 8 approaches.
 
-### Pre-Java 8 Implementation
-
+### Pre-Java 8 Implementation :sparkles:
+:octocat:
 Prior to Java 8, we were expected to implement the interface with concrete definitions, as shown in the test class below:
 
 ```java
@@ -152,9 +152,9 @@ The business logic is intertwined with the technical garbage. The core logic is 
 Note also that all our test cases will start failing too once we change the logic!
 
 What if I have to support dozens of such requirements? Well, either I have to hack the current method to create the additional logic path using a control statement (if-else or switch) or create a new class for each piece of logic. Tightly coupling your business logic to its implementing class is asking for trouble—especially if we have fickle-minded business analysts and project managers. Surely there must be a better way to make it work.
-:octocat:
-## Java 8 Implementation :sparkles:
 
+## Java 8 Implementation :sparkles:
+:octocat:
 Creating multiple behaviors using anonymous classes is not impossible, but it’s not ideal. We can simplify this problem by using lambda functions to represent various behaviors. So, for example, we can write a lambda expression to sum up the trade’s quantities, another for returning a large trade, another expression for encrypting trade data, etc. All we do is write a lambda expression for each of the requirements and send it over to the class that expects the lambda.
 
 For example, take a look at this list of lambda expressions for our requirements:
@@ -190,8 +190,8 @@ Now, the client has the control of creating the behaviors and pass it on to the 
 
 Before we sum up, let’s take an existing Runnable interface, which comes with lambda support, and see how it can be used.
 
-## Runnable Functional interface
-
+## Runnable Functional interface :sparkles:
+:octocat:
 The most popular Runnable interface has one method, run, which takes no arguments and returns nothing. Perhaps the reasoning behind this is that a piece of logic is to be run in a separate thread to speed up the process.
 
 The new definition of Runnable interface, followed by an example implementation using an anonymous class, is given below:
@@ -246,6 +246,7 @@ The client now has the ability to create a plethora of lambda expressions based 
     sendAnEmail();
   });
 ```
-## Summary :octocat:
+## Summary :sparkles:
+:octocat:
 
 In this post, we learned about the biggest change Java has ever seen. Lambdas will certainly steer the direction of Java and make it more appealing to varied sections of the programmer community.
